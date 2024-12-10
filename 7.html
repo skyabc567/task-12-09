@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            width: 200px;
+            height: 50px;
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea cols="30" rows="10"></textarea>
+    <button class="release">发布</button><button class="delAll">删除所有留言</button>
+    <ul></ul>
+
+    <script>
+        document.body.onclick = function (e) {
+
+            if (e.target.className === 'release') {
+                let text = document.querySelector('textarea');
+                if (text.value === '') {
+                    alert('请输入内容后发布')
+                } else {
+                    let li = document.createElement('li'),
+                        delBtn = document.createElement('button');
+                    delBtn.innerText = '删除';
+                    delBtn.className = 'del';
+                    li.innerText = text.value;
+                    li.appendChild(delBtn);
+                    document.querySelector('ul').appendChild(li);
+                    text.value = '';
+                }
+            } else if (e.target.className === 'del') {
+                e.target.parentNode.remove();
+            } else if (e.target.className === 'delAll') {
+                let lis = document.querySelectorAll('ul li');
+                if (lis.length === 0) {
+                    alert('没有留言');
+                } else {
+                    lis[0].parentNode.remove();
+                    let ul = document.createElement('ul');
+                    document.body.appendChild(ul);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

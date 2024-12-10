@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="input1" placeholder="邮箱" style="border-color: transparent;">
+    <input type="text" class="input2">
+    <button></button>
+</body>
+<script>
+    var input1 = document.querySelector(".input1");
+    function onblurClick() {     
+        if(input1.value == "") {
+            input1.setAttribute("placeholder", "邮箱");
+            input1.setAttribute("style", "border-color: red")
+        } else {
+            input1.attributes("style", "border-color: red")
+        }
+    }
+    input1.addEventListener("onblur", onblurClick)
+    function onclickHandler() {
+        input1.setAttribute("placeholder", "");
+        input1.setAttribute("style", "border-color: #ccc")
+    }
+    input1.addEventListener("click", onclickHandler)
+</script>
+</html>

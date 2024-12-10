@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <symbol style="display: none;">
+        <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 9.137C2 14 6.02 16.591 8.962 18.911C10 19.729 11 20.5 12 20.5s2-.77 3.038-1.59C17.981 16.592 22 14 22 9.138S16.5.825 12 5.501C7.5.825 2 4.274 2 9.137"/></svg>
+    </symbol>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <svg data-index="0" style="width: 100px; height: 100px;font-size: 100px;">
+                <use xlink:href="#heart"></use>
+            </svg>
+            <svg data-index="1"  style="width: 100px; height: 100px;font-size: 100px;">
+                <use xlink:href="#heart"></use>
+            </svg>
+            <svg data-index="2"  style="width: 100px; height: 100px;font-size: 100px;">
+                <use xlink:href="#heart"></use>
+            </svg>
+            <svg data-index="3"  style="width: 100px; height: 100px;font-size: 100px;">
+                <use xlink:href="#heart"></use>
+            </svg>
+            <svg data-index="4"  style="width: 100px; height: 100px;font-size: 100px;">
+                <use xlink:href="#heart"></use>
+            </svg>
+        </div>
+        <div>xxx</div>
+    </div>
+</body>
+<script>
+    var hearts = document.querySelectorAll("svg");
+    var container = document.querySelector(".container");
+    container.addEventListener("click", function(e) {
+        if(e.target.tagName === "use") {
+            var index = parseInt(e.target.parentNode.dataset.index);
+            for(var i = 0; i < hearts.length; i++) {
+                hearts[i].style.color = i <= index ? "red" : "black";
+            }
+        }
+    })
+</script>
+</html>

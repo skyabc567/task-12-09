@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big {
+            width: 400px;
+            margin: auto;
+        }
+
+        .bottom {
+            width: 600px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .big img {
+            width: 400px;
+            height: 400px;
+        }
+
+        .bottom img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="big">
+            <img src="./images/nav1.jpg" alt="">
+        </div>
+        <div class="bottom">
+            <img src="./images/nav1.jpg" alt="" class="bo1">
+            <img src="./images/nav2.jpg" alt="" class="bo2">
+            <img src="./images/nav3.jpg" alt="" class="bo3">
+            <img src="./images/nav4.jpg" alt="" class="bo4">
+            <img src="./images/nav5.jpg" alt="" class="bo5">
+        </div>
+    </div>
+</body>
+<script>
+    function big(e) {
+        var img = document.querySelector(".center img");
+        var src = e.target.src;
+        img.src = src
+    }
+    var bo1 = document.querySelector(".bo1");
+    var bo2 = document.querySelector(".bo2");
+    var bo3 = document.querySelector(".bo3");
+    var bo4 = document.querySelector(".bo4");
+    var bo5 = document.querySelector(".bo5");
+    bo1.addEventListener("click", big);
+    bo2.addEventListener("click", big);
+    bo3.addEventListener("click", big);
+    bo4.addEventListener("click", big);
+    bo5.addEventListener("click", big);
+</script>
+</html>

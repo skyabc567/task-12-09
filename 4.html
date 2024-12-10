@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="text">出了一个大新闻!!</span>
+    <button onclick="increaseTextSize(50)">变大50px</button>
+    <button onclick="increaseTextSize(80)">变大80px</button>
+</body>
+    <script>
+        function increaseTextSize(amount) {
+        const textElement = document.getElementById('text');
+        const currentSize = parseFloat(window.getComputedStyle(textElement, null).getPropertyValue('font-size'));
+        textElement.style.fontSize = (currentSize + amount) + 'px';
+    }
+    </script>
+</html>

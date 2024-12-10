@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="pass" type="password">
+    <button>显示明文</button>
+</body>
+<script>
+    var botton = document.querySelector("button");
+    function fn() {
+        const textElement = document.querySelector("input");
+        var value = textElement.value;
+        textElement.setAttribute("type", "text");
+        textElement.value = value;
+    }
+    botton.addEventListener("click", fn);
+</script>
+</html>
